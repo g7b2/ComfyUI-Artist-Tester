@@ -24,7 +24,7 @@ Designed to solve the "caching" problem where batch runs produce identical image
   - Connect the "Final Text" or "Artist Tag" directly to the `filename_prefix` input.
 
 ## 📦 Installation
-
+![Workflow](image/workflow.png)
 1. Open your terminal/command prompt.
 2. Navigate to your ComfyUI custom nodes directory:
    ```bash
