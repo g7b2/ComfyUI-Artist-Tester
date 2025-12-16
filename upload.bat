@@ -10,7 +10,7 @@ git add .
 git commit -m "Auto update by script"
 
 :: 3. 推送
-git push origin main
+git push origin main -f
 
 echo ==========================================
 echo             Upload Success!
