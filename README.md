@@ -1,32 +1,36 @@
-# ComfyUI Artist Tester
+# ComfyUI Artist Tester (V2.0)
 
-A dedicated suite of Custom Nodes for **Batch Testing** artists, styles, and prompts in ComfyUI. 
+A powerful custom node suite for **Batch Testing** artists, styles, and prompts in ComfyUI. 
 
-Designed to solve the "caching" problem where batch runs produce identical images, and simplifies the workflow for saving images with dynamic filenames.
+Now updated to **V2.0** with **No-Repeat Random**, **Counter Isolation**, **Filename Indexing**, and **Smart Sanitization**.
 
 ## ✨ Features
 
-- **👉 1. Artist List Iterator**
-  - **Auto Increment Mode**: Automatically iterates through your list (one per batch). No external primitive nodes needed.
-  - **Reset Function**: A simple boolean switch to reset the counter to 0.
-  - **Anti-Cache**: Built-in logic to force ComfyUI to re-generate every single time.
-  
-- **👉 2. Artist Prompt Station**
-  - Combines `Base Prompt` + `Artist Tag` + `Negative Prompt` automatically.
-  - Outputs **Positive & Negative Conditioning** (plug & play).
-  - Outputs **Final Text String** (for filenames).
+### 👉 1. Artist List Iterator (V2.0)
+The core node to manage your list.
+- **Random (No Repeat)**: Uses a `seed` to shuffle the list deterministically. You can run through 100 artists without repeating a single one!
+- **Counter Isolation**: Counters are now tied to the list content. Multiple iterator nodes won't interfere with each other.
+- **New Outputs**: 
+  - `index_string`: Outputs formatted numbers like "001", "002" for sorting filenames.
+  - `total_count`: Total number of lines.
 
-- **💾 3. Save Image (Auto Name)**
-  - **Smart Sanitization**: Automatically fixes filenames that cause Windows errors!
-    - Converts `artist:tag` to `artist-tag`.
-    - Removes illegal characters (`\ / : * ? " < > |`).
-    - Truncates overly long filenames.
-  - Connect the "Final Text" or "Artist Tag" directly to the `filename_prefix` input.
+### 👉 2. Artist Prompt Composer (Flexible)
+- **Custom Template**: Now supports flexible prompt weighting and positioning!
+  - Default: `{base}, {artist}`
+  - Example: `{base}, (style of {artist}:1.2)`
+  - Example: `(artist:{artist}), {base}`
+- **Auto-Connect**: Automatically combines Base Prompt + Artist + Negative.
+
+### 💾 3. Save Image (Auto Name)
+- **Smart Sanitization**: 
+  - Automatically fixes Windows filename errors (e.g., converts `artist:tag` to `artist-tag`).
+  - Removes illegal characters (`\ / : * ? " < > |`).
+  - Truncates filenames if they are too long.
+- **Plug & Play**: Connect the `final_text` directly to `filename_prefix`.
 
 ## 📦 Installation
 
-1. Open your terminal/command prompt.
-2. Navigate to your ComfyUI custom nodes directory:
+1. Navigate to your ComfyUI custom nodes directory:
    ```bash
    cd ComfyUI/custom_nodes/
    Clone this repository:
