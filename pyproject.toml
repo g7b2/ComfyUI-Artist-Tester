@@ -1,0 +1,29 @@
+[project]
+name = "comfyui-artist-tester"
+description = "A powerful custom node suite for Batch Testing artists, styles, and prompts in ComfyUI."
+version = "2.0.0"
+license = { file = "LICENSE" }
+dependencies = []
+readme = "README.md"
+authors = [
+    { name = "g7b2", email = "g7b2@github.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository = "https://github.com/g7b2/ComfyUI-Artist-Tester"
+# Used by Comfy Registry https://registry.comfy.org
+Documentation = "https://github.com/g7b2/ComfyUI-Artist-Tester/wiki"
+"Bug Tracker" = "https://github.com/g7b2/ComfyUI-Artist-Tester/issues"
+
+[tool.comfy]
+PublisherId = "g7b2"
+DisplayName = "ComfyUI-Artist-Tester"
+Icon = ""
+includes = []
+# requires-comfyui = ">=1.0.0" # ComfyUI version compatibility
