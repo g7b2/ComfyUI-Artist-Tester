@@ -28,7 +28,7 @@ Documentation = "https://github.com/g7b2/ComfyUI-Artist-Tester/wiki"
 "Bug Tracker" = "https://github.com/g7b2/ComfyUI-Artist-Tester/issues"
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "g7b2"
 DisplayName = "ComfyUI-Artist-Tester"
 Icon = ""
 includes = [] 
